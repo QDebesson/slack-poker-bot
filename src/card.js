@@ -4,6 +4,10 @@ class Card {
     this.suit = suit;
   }
 
+  getValue() {
+    return Card.Points().get(Card.Ranks().indexOf(this.rank));
+  }
+
   toString() {
     return `${this.rank}${Card.SuitMapping()[this.suit]}`;
   }
@@ -14,6 +18,10 @@ class Card {
 
   static Ranks() {
     return ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A'];
+  }
+
+  static Points() {
+    return [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11];
   }
 
   static Suits() {

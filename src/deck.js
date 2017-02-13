@@ -1,12 +1,14 @@
 const Card = require('./card.js');
 
 class Deck {
-  constructor() {
+  constructor(count = 1) {
     this.cards = [];
-    for (let suit of Card.Suits()) {
-      for (let rank of Card.Ranks()) {
-        let card = new Card(rank, suit);
-        this.cards.push(card);
+    for(let i = 0; i<count; i++) {
+      for (let suit of Card.Suits()) {
+        for (let rank of Card.Ranks()) {
+          let card = new Card(rank, suit);
+          this.cards.push(card);
+        }
       }
     }
   }
